@@ -1,13 +1,35 @@
 import Image from "next/image";
+import Link from "next/link";
+import LabLogo from "@/components/ui/lab-logo";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { lusitana } from "@/components/ui/fonts";
+import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
 export default function Home() {
   return (
-    <div className="flex flex-1 flex-col items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex w-full max-w-3xl flex-1 flex-col items-center justify-between bg-white px-16 py-32 sm:items-start dark:bg-black">
-        <Image className="h-5 w-25 dark:invert" src="/next.svg" alt="Next.js logo" width={100} height={20} priority />
-        <ConnectButton label="Sign in" showBalance={true} />
-      </main>
-    </div>
+    <main className="flex min-h-screen flex-col p-6">
+      <div className="flex h-20 shrink-0 items-end rounded-lg bg-blue-500 p-4 md:h-52">
+        <LabLogo />
+      </div>
+      <div className="mt-4 flex grow flex-col gap-4 md:flex-row">
+        <div className="flex flex-col justify-center gap-6 rounded-lg bg-gray-50 px-6 py-10 md:w-2/5 md:px-20">
+          {/* <p className={`text-xl text-gray-800 md:text-3xl md:leading-normal`}> */}
+          <p className={`${lusitana.className} text-xl text-gray-800 md:text-3xl md:leading-normal`}>
+            <strong>Welcome to Acme.</strong> This is the example for the{" "}
+            <a href="https://nextjs.org/learn/" className="text-blue-500">
+              Next.js Learn Course
+            </a>
+            , brought to you by Vercel.
+          </p>
+          <Link
+            href="/playground"
+            className="flex items-center gap-5 self-start rounded-lg bg-blue-500 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-400 md:text-base"
+          >
+            <span>COME TO</span> <ArrowRightIcon className="w-5 md:w-6" />
+          </Link>
+        </div>
+        <div>你好你好你好</div>
+      </div>
+    </main>
   );
 }
