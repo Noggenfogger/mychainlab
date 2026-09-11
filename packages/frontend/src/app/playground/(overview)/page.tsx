@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 export default async function Page() {
   // 模拟数据加载延迟，用于验证 loading.tsx 效果
-  await new Promise((resolve) => setTimeout(resolve, 3000));
+  // await new Promise((resolve) => setTimeout(resolve, 1000));
 
   return (
     <main>
