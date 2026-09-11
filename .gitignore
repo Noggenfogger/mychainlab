@@ -35,6 +35,11 @@ yarn-error.log*
 packages/contracts/artifacts
 packages/contracts/cache
 packages/contracts/typechain-types
+packages/contracts/types
 packages/contracts/broadcast
 packages/contracts/coverage
 packages/contracts/coverage.json
+packages/contracts/dist
+packages/contracts/bundle
+packages/contracts/.gas-snapshot
+packages/contracts/snapshots
