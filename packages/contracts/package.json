@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "test": "hardhat test"
+    "test": "hardhat test",
+    "test:sol": "hardhat test solidity",
+    "test:ts": "hardhat test nodejs"
   },
   "prettier": {
     "tabWidth": 2,
