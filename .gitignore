@@ -31,14 +31,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 
-# smart contracts (hardhat)
+# smart contracts (hardhat v3)
 packages/contracts/artifacts
 packages/contracts/cache
-packages/contracts/typechain-types
 packages/contracts/types
-packages/contracts/broadcast
 packages/contracts/coverage
-packages/contracts/coverage.json
 packages/contracts/dist
 packages/contracts/bundle
 packages/contracts/.gas-snapshot
