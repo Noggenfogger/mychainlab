@@ -6,7 +6,8 @@
     "dev": "pnpm --filter @mychainlab/frontend dev",
     "build": "pnpm --filter @mychainlab/frontend build",
     "start": "pnpm --filter @mychainlab/frontend start",
-    "lint": "pnpm --filter @mychainlab/frontend lint"
+    "lint": "pnpm --filter @mychainlab/frontend lint",
+    "test": "pnpm --filter @mychainlab/contracts test"
   },
   "packageManager": "pnpm@11.24.0"
 }

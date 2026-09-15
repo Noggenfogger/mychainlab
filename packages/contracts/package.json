@@ -2,6 +2,9 @@
   "name": "@mychainlab/contracts",
   "version": "1.0.0",
   "type": "module",
+  "scripts": {
+    "test": "hardhat test"
+  },
   "prettier": {
     "tabWidth": 2,
     "plugins": ["prettier-plugin-solidity"]
