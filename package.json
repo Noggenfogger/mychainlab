@@ -9,7 +9,10 @@
     "lint": "pnpm --filter @mychainlab/frontend lint",
     "test": "pnpm --filter @mychainlab/contracts test",
     "test:sol": "pnpm --filter @mychainlab/contracts test:sol",
-    "test:ts": "pnpm --filter @mychainlab/contracts test:ts"
+    "test:ts": "pnpm --filter @mychainlab/contracts test:ts",
+    "test:cov": "pnpm --filter @mychainlab/contracts test:cov",
+    "test:sol:cov": "pnpm --filter @mychainlab/contracts test:sol:cov",
+    "test:ts:cov": "pnpm --filter @mychainlab/contracts test:ts:cov"
   },
   "packageManager": "pnpm@11.24.0"
 }

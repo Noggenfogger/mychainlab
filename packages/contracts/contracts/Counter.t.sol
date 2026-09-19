@@ -15,6 +15,7 @@ contract CounterTest is Test {
     require(counter.x() == 0, "Initial value should be 0");
   }
 
+  // 接受参数：模糊测试
   function testFuzz_Inc(uint8 x) public {
     for (uint8 i = 0; i < x; i++) {
       counter.inc();
@@ -23,7 +24,14 @@ contract CounterTest is Test {
   }
 
   function test_IncByZero() public {
-    vm.expectRevert();
+    vm.expectRevert(); // 期望失败
     counter.incBy(0);
+  }
+
+  function test_IncEmitsIncrementEvent() public {
+    vm.expectEmit(); // 第一步：开启事件检查
+    emit Counter.Increment(1); // 第二步：期望模版事件
+
+    counter.inc(); // 第三步： 实际调用，对比期望值
   }
 }

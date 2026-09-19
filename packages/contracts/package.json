@@ -5,7 +5,10 @@
   "scripts": {
     "test": "hardhat test",
     "test:sol": "hardhat test solidity",
-    "test:ts": "hardhat test nodejs"
+    "test:ts": "hardhat test nodejs",
+    "test:cov": "hardhat test --coverage",
+    "test:sol:cov": "hardhat test solidity --coverage",
+    "test:ts:cov": "hardhat test nodejs --coverage"
   },
   "prettier": {
     "tabWidth": 2,
