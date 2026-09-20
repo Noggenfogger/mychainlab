@@ -8,7 +8,11 @@
     "test:ts": "hardhat test nodejs",
     "test:cov": "hardhat test --coverage",
     "test:sol:cov": "hardhat test solidity --coverage",
-    "test:ts:cov": "hardhat test nodejs --coverage"
+    "test:ts:cov": "hardhat test nodejs --coverage",
+    "node":"hardhat node",
+    "deploy": "hardhat ignition deploy",
+    "deploy:local": "hardhat ignition deploy --network localhost",
+    "deploy:sepolia": "hardhat ignition deploy --network sepolia"
   },
   "prettier": {
     "tabWidth": 2,

@@ -40,3 +40,4 @@ packages/contracts/dist
 packages/contracts/bundle
 packages/contracts/.gas-snapshot
 packages/contracts/snapshots
+packages/contracts/ignition/deployments

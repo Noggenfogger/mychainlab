@@ -12,7 +12,11 @@
     "test:ts": "pnpm --filter @mychainlab/contracts test:ts",
     "test:cov": "pnpm --filter @mychainlab/contracts test:cov",
     "test:sol:cov": "pnpm --filter @mychainlab/contracts test:sol:cov",
-    "test:ts:cov": "pnpm --filter @mychainlab/contracts test:ts:cov"
+    "test:ts:cov": "pnpm --filter @mychainlab/contracts test:ts:cov",
+    "node":"pnpm --filter @mychainlab/contracts node",
+    "deploy": "pnpm --filter @mychainlab/contracts deploy --",
+    "deploy:local": "pnpm --filter @mychainlab/contracts deploy:local --",
+    "deploy:sepolia": "pnpm --filter @mychainlab/contracts deploy:sepolia --"
   },
   "packageManager": "pnpm@11.24.0"
 }
