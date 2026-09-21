@@ -11,6 +11,7 @@
     "lint": "pnpm --filter @mychainlab/frontend lint",
     "add:contracts": "pnpm --filter @mychainlab/contracts add",
     "remove:contracts": "pnpm --filter @mychainlab/contracts remove",
+    "build:contracts": "pnpm --filter @mychainlab/contracts build",
     "test": "pnpm --filter @mychainlab/contracts test",
     "test:sol": "pnpm --filter @mychainlab/contracts test:sol",
     "test:ts": "pnpm --filter @mychainlab/contracts test:ts",
