@@ -38,6 +38,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 ## 合约命令
 
 ```bash
-pnpm deploy:local ignition/modules/Counter.ts   # 本地部署
-pnpm keystore:set --force SEPOLIA_RPC_URL       # 修改keystore
+pnpm deploy:local Counter.ts                               # 本地部署
+pnpm deploy:sepolia Counter.ts --network sepolia --verify  # 部署并验证
+pnpm keystore:set --force SEPOLIA_RPC_URL                  # 修改keystore
 ```
