@@ -35,8 +35,9 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
-## 部署合约命令
+## 合约命令
 
 ```bash
 pnpm deploy:local ignition/modules/Counter.ts   # 本地部署
+pnpm keystore:set --force SEPOLIA_RPC_URL       # 修改keystore
 ```

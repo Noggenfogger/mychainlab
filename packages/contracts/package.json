@@ -12,7 +12,10 @@
     "node":"hardhat node",
     "deploy": "hardhat ignition deploy",
     "deploy:local": "hardhat ignition deploy --network localhost",
-    "deploy:sepolia": "hardhat ignition deploy --network sepolia"
+    "deploy:sepolia": "hardhat ignition deploy --network sepolia",
+    "keystore:set": "hardhat keystore set",
+    "keystore:delete": "hardhat keystore delete",
+    "keystore:list": "hardhat keystore list"
   },
   "prettier": {
     "tabWidth": 2,

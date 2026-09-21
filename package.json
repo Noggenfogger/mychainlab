@@ -14,9 +14,12 @@
     "test:sol:cov": "pnpm --filter @mychainlab/contracts test:sol:cov",
     "test:ts:cov": "pnpm --filter @mychainlab/contracts test:ts:cov",
     "node":"pnpm --filter @mychainlab/contracts node",
-    "deploy": "pnpm --filter @mychainlab/contracts deploy --",
-    "deploy:local": "pnpm --filter @mychainlab/contracts deploy:local --",
-    "deploy:sepolia": "pnpm --filter @mychainlab/contracts deploy:sepolia --"
+    "deploy": "pnpm --filter @mychainlab/contracts exec sh -c 'hardhat ignition deploy ignition/modules/$0'",
+    "deploy:local": "pnpm --filter @mychainlab/contracts exec sh -c 'hardhat ignition deploy ignition/modules/$0 --network localhost'",
+    "deploy:sepolia": "pnpm --filter @mychainlab/contracts exec sh -c 'hardhat ignition deploy ignition/modules/$0 --network sepolia'",
+    "keystore:set": "pnpm --filter @mychainlab/contracts keystore:set",
+    "keystore:delete": "pnpm --filter @mychainlab/contracts keystore:delete",
+    "keystore:list": "pnpm --filter @mychainlab/contracts keystore:list"
   },
   "packageManager": "pnpm@11.24.0"
 }
