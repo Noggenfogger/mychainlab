@@ -39,5 +39,6 @@ packages/contracts/coverage
 packages/contracts/dist
 packages/contracts/bundle
 packages/contracts/.gas-snapshot
+packages/contracts/gas-stats.json
 packages/contracts/snapshots
 packages/contracts/ignition/deployments

@@ -4,9 +4,16 @@ pragma solidity ^0.8.34;
 contract Counter {
   uint public x;
 
+  address public owner;
+
+  constructor() {
+    owner = msg.sender;
+  }
+
   event Increment(uint by);
 
   function inc() public {
+    require(msg.sender == owner, "only the owner can increment the counter");
     x++; //🐞 bug!
     emit Increment(1);
   }

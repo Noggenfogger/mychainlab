@@ -1,10 +1,11 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
-
+import { keccak256 } from "viem";
 import { network } from "hardhat";
 
 describe("Counter", async function () {
-  const { viem } = await network.create();
+  const { viem, networkHelpers } = await network.create();
+  // const { viem } = await network.create({chainType: "op",});   // 多链支持
   const publicClient = await viem.getPublicClient();
 
   it("Should emit the Increment event when calling the inc() function", async function () {
@@ -15,6 +16,24 @@ describe("Counter", async function () {
       counter,
       "Increment",
       [1n],
+    );
+  });
+
+  it("Should allow the owner revert for non-owners", async function () {
+    const counter = await viem.deployContract("Counter");
+
+    const nonOwnerAddress = "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+
+    // Impersonate the non-owner account
+    await networkHelpers.impersonateAccount(nonOwnerAddress);
+
+    // Fund the non-owner account with some ETH to pay for gas
+    await networkHelpers.setBalance(nonOwnerAddress, 10n ** 18n);
+
+    // Call inc() as a non-owner - should revert.
+    await viem.assertions.revertWith(
+      counter.write.inc({ account: nonOwnerAddress }),
+      "only the owner can increment the counter",
     );
   });
 

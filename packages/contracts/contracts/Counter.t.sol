@@ -17,12 +17,17 @@ contract CounterTest is Test {
 
   // 接受参数：模糊测试
   function testFuzz_Inc(uint8 x) public {
+    vm.startSnapshotGas("multiple-ops");
+
     for (uint8 i = 0; i < x; i++) {
       counter.inc();
     }
-    require(counter.x() == x, "Value after calling inc x times should be x");
+    assertEq(counter.x(), x, "Value after calling inc x times should be x");
+
+    vm.stopSnapshotGas("multiple-ops");
   }
 
+  /// hardhat-config: allowInternalExpectRevert = true
   function test_IncByZero() public {
     vm.expectRevert(); // 期望失败
     counter.incBy(0);

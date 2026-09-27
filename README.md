@@ -38,7 +38,16 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 ## 合约命令
 
 ```bash
+pnpm test:sol --grep testFuzz_Inc                          # 测试指定函数
+pnpm test:sol --grep-exclude testFuzz_Inc                  # 测试除指定函数外的所有函数
+pnpm test:sol --chain-type op                              # 测试指定链类型：多链支持
+pnpm test:sol --gas-stats                                  # 测试gas消耗
+pnpm test:sol --gas-stats-json gas-stats.json              # 测试gas消耗并保存到文件
+pnpm test:sol --snapshot                                   # 测试gas快照
+pnpm test:sol --snapshot-check                             # 测试gas快照：修改后与前一个快照间任何差异
+pnpm test:sol --snapshot-check --tolerance 0.5             # 测试gas快照：给快照检查增加微小容差
 pnpm deploy:local Counter.ts                               # 本地部署
 pnpm deploy:sepolia Counter.ts --network sepolia --verify  # 部署并验证
 pnpm keystore:set --force SEPOLIA_RPC_URL                  # 修改keystore
+pnpm hardhat run scripts/send-op-tx.ts --build-profile production --network sepolia # 脚本部署
 ```
