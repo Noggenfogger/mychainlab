@@ -50,4 +50,15 @@ pnpm deploy:local Counter.ts                               # 本地部署
 pnpm deploy:sepolia Counter.ts --network sepolia --verify  # 部署并验证
 pnpm keystore:set --force SEPOLIA_RPC_URL                  # 修改keystore
 pnpm hardhat run scripts/send-op-tx.ts --build-profile production --network sepolia # 脚本部署
+ # 验证合约
+pnpm hardhat verify --network sepolia 0x1234567890...
+# 验证合约（构造函数传参：string ｜ uint）
+pnpm hardhat verify --network sepolia 0x1234567890... "Hello" 1000
+# 验证合约（构造函数传参：从文件读取）
+pnpm hardhat verify --network sepolia --constructor-args-path constructor-args.ts 0x1234567890...
+ # 验证合约（指定构建配置，不使用默认的production构建）
+pnpm hardhat verify --network sepolia --build-profile default 0x1234567890...
+# 验证合约（指定某个区块链浏览器，而默认的是三个：Etherscan、Blockscout 和 Sourcify ）
+# 如果要指定其他网络上的合约，则需要去hardhat.config.ts里面去配置
+pnpm hardhat verify etherscan ...
 ```
