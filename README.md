@@ -61,4 +61,13 @@ pnpm hardhat verify --network sepolia --build-profile default 0x1234567890...
 # 验证合约（指定某个区块链浏览器，而默认的是三个：Etherscan、Blockscout 和 Sourcify ）
 # 如果要指定其他网络上的合约，则需要去hardhat.config.ts里面去配置
 pnpm hardhat verify etherscan ...
+
+# 密钥管理
+pnpm hardhat keystore list
+pnpm hardhat keystore get <key>
+pnpm hardhat keystore delete <key>
+pnpm hardhat keystore change-password
+pnpm hardhat keystore path
+pnpm hardhat keystore rename <oldKey> <newKey>
+pnpm hardhat keystore set --dev <key>  # 设置开发环境密钥，更方便，无需密码
 ```

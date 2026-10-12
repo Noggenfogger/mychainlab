@@ -1,5 +1,15 @@
 import hardhatToolboxViemPlugin from "@nomicfoundation/hardhat-toolbox-viem";
-import { configVariable, defineConfig } from "hardhat/config";
+import { configVariable, defineConfig, task } from "hardhat/config";
+
+const printAccounts = task("accounts", "Print the accounts")
+  .setAction(() => import("./tasks/accounts.js"))
+  .build();
+// const printAccounts = task("accounts", "Print the accounts")
+//   .setInlineAction(async (taskArguments, hre) => {
+//     const { provider } = await hre.network.create();
+//     console.log(await provider.request({ method: "eth_accounts" }));
+//   })
+//   .build();
 
 export default defineConfig({
   plugins: [hardhatToolboxViemPlugin],
@@ -40,4 +50,5 @@ export default defineConfig({
       apiKey: configVariable("ETHERSCAN_API_KEY"),
     },
   },
+  tasks: [printAccounts],
 });
